@@ -7,6 +7,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.Set;
+
 public class _01_uniBank {
     DialogContent dc=new DialogContent();
     @Given("Navigate to Uni Bank")
@@ -28,7 +30,6 @@ public class _01_uniBank {
     @And("Click on the Etrafli in UCard")
     public void clickOnTheEtrafliInUCard() {
         dc.findAndClick("uCards");
-        //GWD.Bekle(5);
     }
 
     @Then("Scroll to UBank Yukle and click")
@@ -38,6 +39,21 @@ public class _01_uniBank {
 
     @And("Click on GooglePlay")
     public void clickOnGooglePlay() {
-        //dc.findAndClick("googlePlay");
+        Set<String> secondW=GWD.getDriver().getWindowHandles();
+        for (String window:secondW) {
+            GWD.getDriver().switchTo().window(window);
+        }
+        dc.findAndClick("googlePlay");
+
+    }
+
+    @Then("Click on Установить button for download")
+    public void clickOnУстановитьButtonForDownload() {
+//        Set<String> thirdW=GWD.getDriver().getWindowHandles();
+//        for (String window:thirdW) {
+//            GWD.getDriver().switchTo().window(window);
+//        }
+        //dc.findAndClick("download");
+        dc.findAndClick("leo");
     }
 }

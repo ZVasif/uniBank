@@ -19,8 +19,13 @@ public class DialogContent extends Parent {
             private WebElement uCards;
     @FindBy(css = "[class='buy-card__wrapper']>:nth-child(1)")
             private WebElement UByukle;
-    @FindBy(xpath = "//*[contains(@class,'sprite--playstore-label')]")
+    @FindBy(css = "[class$='playstore-label']")
             private WebElement googlePlay;
+    @FindBy(xpath = "//*[@jsdata=\"deferred-i7\"]")
+            private WebElement download;
+    @FindBy(css = "[class='DdYX5']")
+            private WebElement leo;
+
 
     //************************** Ortaq lcator **************************//
 
@@ -45,6 +50,8 @@ public class DialogContent extends Parent {
             case "uCards":myElement=uCards;break;
             case "UByukle":myElement=UByukle;break;
             case "googlePlay":myElement=googlePlay;break;
+            case "download":myElement=download;break;
+            case "leo":myElement=leo;break;
 
 
         }
