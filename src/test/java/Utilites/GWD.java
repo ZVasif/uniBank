@@ -1,13 +1,12 @@
 package Utilites;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.github.bonigarcia.wdm.managers.OperaDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.opera.OperaDriver;
-import org.openqa.selenium.opera.OperaDriverService;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.util.Locale;
@@ -36,7 +35,7 @@ public class GWD {
         System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "Error");
 
         if (threadBrowserName.get() == null) // paralel çalışmayan yani XML den parametreyle gelmeyen ler çağıran
-            threadBrowserName.set("firefox"); // basic arayanlar için
+            threadBrowserName.set("chrome"); // basic arayanlar için
 
 
         if (threadDriver.get() == null) {
@@ -49,10 +48,10 @@ public class GWD {
                     WebDriverManager.chromedriver().setup();
                     threadDriver.set(new ChromeDriver());
                     break;
-                case "opera":
-                   WebDriverManager.operadriver().setup();
-                   threadDriver.set(new OperaDriver());
-                    break;
+//                case "opera":
+//                   WebDriverManager.operadriver().setup();
+//                   threadDriver.set(new OperaDriverManager());
+//                    break;
                 case "firefox":
                     System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                     WebDriverManager.firefoxdriver().setup();
@@ -82,7 +81,7 @@ public class GWD {
 //        }
 
         if (threadDriver.get() != null) { // driver varsa
-            threadDriver.get().quit();
+           // threadDriver.get().quit();
 
             WebDriver driver=threadDriver.get();
             driver=null;

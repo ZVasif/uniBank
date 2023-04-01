@@ -6,7 +6,13 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.Set;
 
 public class _01_uniBank {
@@ -47,13 +53,15 @@ public class _01_uniBank {
 
     }
 
-    @Then("Click on Установить button for download")
-    public void clickOnУстановитьButtonForDownload() {
-//        Set<String> thirdW=GWD.getDriver().getWindowHandles();
-//        for (String window:thirdW) {
-//            GWD.getDriver().switchTo().window(window);
-//        }
-        //dc.findAndClick("download");
-        dc.findAndClick("leo");
+
+    @Then("Click on Install button for download")
+    public void clickOnInstallButtonForDownload() throws AWTException {
+        WebElement element=GWD.getDriver().findElement(By.cssSelector("[class='edaMIf']"));
+        Actions actions=new Actions(GWD.getDriver());
+        Action action=actions.moveToElement(element).click().build();
+        action.perform();
+        dc.findAndClick("singIn");
+        dc.findAndSend("email","vasifzeynalov.zv@gmail.com");
+        dc.findAndClick("next");
     }
 }

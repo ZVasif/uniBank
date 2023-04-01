@@ -8,4 +8,4 @@ Feature: Uni Bank
     And Click on the Etrafli in UCard
     Then Scroll to UBank Yukle and click
     And Click on GooglePlay
-    Then Click on Установить button for download
+    Then Click on Install button for download
