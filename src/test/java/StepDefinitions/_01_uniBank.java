@@ -61,7 +61,11 @@ public class _01_uniBank {
         Action action=actions.moveToElement(element).click().build();
         action.perform();
         dc.findAndClick("singIn");
-        dc.findAndSend("email","vasifzeynalov.zv@gmail.com");
+        dc.findAndSend("email","bond007cems@gmail.com");
         dc.findAndClick("next");
+        dc.findAndSend("password","00bond7c");
+        dc.findAndClick("nextPassword");
+        dc.findAndClick("ok");
+
     }
 }

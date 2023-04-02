@@ -10,7 +10,7 @@ public class DialogContent extends Parent {
         PageFactory.initElements(GWD.getDriver(),this);
     }
 
-    //************************** Login **************************//
+    //************************** _01_ UniBank **************************//
     @FindBy(css = "[style ='line-height: 15px']")
     private WebElement tele;
     @FindBy(xpath = "(//*[text()='Kartlar'])[1]")
@@ -29,9 +29,18 @@ public class DialogContent extends Parent {
             private WebElement email;
     @FindBy(xpath = "(//*[@jsname=\"V67aGc\"])[2]")
             private WebElement next;
+    @FindBy(name = "Passwd")
+            private WebElement password;
+    @FindBy(id = "passwordNext")
+            private WebElement nextPassword;
+    @FindBy(className = "dIodBf")
+            private WebElement ok;
 
 
-    //************************** Ortaq lcator **************************//
+    //************************** _02_ Kartlar **************************//
+
+    @FindBy(xpath = "//*[contains(@class,'commoncards ')]")
+            private WebElement debetCards;
 
 
 
@@ -39,6 +48,7 @@ public class DialogContent extends Parent {
     public void findAndSend (String strElement,String value){
        switch (strElement){
            case "email":myElement=email;break;
+           case "password":myElement=password;break;
 
        }
 
@@ -57,6 +67,8 @@ public class DialogContent extends Parent {
             case "install":myElement=install;break;
             case "singIn":myElement=singIn;break;
             case "next":myElement=next;break;
+            case "nextPassword":myElement=nextPassword;break;
+            case "ok":myElement=ok;break;
 
 
         }
