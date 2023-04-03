@@ -39,8 +39,7 @@ public class DialogContent extends Parent {
 
     //************************** _02_ Kartlar **************************//
 
-    @FindBy(xpath = "//*[contains(@class,'commoncards ')]")
-            private WebElement debetCards;
+
 
 
 
