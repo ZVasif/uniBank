@@ -84,18 +84,22 @@ public class _02_Kartlar {
 
         List<WebElement> card3 =GWD.getDriver().findElements(By.xpath("//*[@class='commoncards__name']"));
 
-        String [] listCard3={"Albalı Debet","Albalı ","UCard Gift","Digital card "};
+        String[] listCard3={"Albalı Debet","Albalı ","UCard Gift","Digital card "};
 
-        for (int i = 9; i < card3.size() ; i--) {
-            System.out.println(card3.get(i).getText());
-//            if (card3.get(i).getText().equalsIgnoreCase(listCard3[i])){
-//
-//                System.out.println(card3.get(i).getText()+". *** OK! ***");
-//                System.out.println("<---------------------------------------->");
-//            } else {
-//            System.out.println((i + 1) + "." + card3.get(i).getText() + ". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
-//            System.out.println("<---------------------------------------->");
-//        }
+        for (int i = 0; i < listCard3.length ; i++) {
+            for (int j = 5; j < card3.size(); j++) {
+
+                if (card3.get(j).getText().equalsIgnoreCase(listCard3[i])) {
+                    System.out.println((i+1)+"."+card3.get(j).getText() + ". *** OK! ***");
+                    System.out.println("<---------------------------------------->");
+                }else {
+                    System.out.println((i + 1) + "." + card3.get(j).getText() + ". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
+                    System.out.println("<---------------------------------------->");
+                }
+            }
+
+
+
         }
     }
 }
