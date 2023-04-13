@@ -13,6 +13,7 @@ public class _02_Kartlar {
 
     @And("Check how many cards are in kartlar section")
     public void checkHowManyCardsAreInKartlarSection() {
+        DialogContent dc=new DialogContent();
 
         System.out.println("**************** Kartlar ****************");
 
@@ -68,6 +69,7 @@ public class _02_Kartlar {
             }
 
         }
+        System.out.println("");
 
         System.out.println("**************** Digər ****************");
 
@@ -82,24 +84,47 @@ public class _02_Kartlar {
 
         System.out.println("<---------------------------------------->");
 
-        List<WebElement> card3 =GWD.getDriver().findElements(By.xpath("//*[@class='commoncards__name']"));
 
-        String[] listCard3={"Albalı Debet","Albalı ","UCard Gift","Digital card "};
+        WebElement Dcard_1=GWD.getDriver().findElement(By.xpath("//*[contains(text(),'Albalı Debet')]"));
+        if (Dcard_1.getText().equalsIgnoreCase("Albalı Debet")){
+            System.out.println("1."+Dcard_1.getText()+". *** OK! ***");
+            System.out.println("<---------------------------------------->");
+        }else System.out.println("1."+Dcard_1.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
 
-        for (int i = 0; i < listCard3.length ; i++) {
-            for (int j = 5; j < card3.size(); j++) {
+        WebElement Dcard_2=GWD.getDriver().findElement(By.xpath("//*[contains(text(),'Albalı  ')]"));
+        if (Dcard_2.getText().equalsIgnoreCase("Albalı  ")){
+            System.out.println("2."+Dcard_2.getText()+". *** OK! ***");
+            System.out.println("<---------------------------------------->");
+        }else System.out.println("2."+Dcard_2.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
 
-                if (card3.get(j).getText().equalsIgnoreCase(listCard3[i])) {
-                    System.out.println((i+1)+"."+card3.get(j).getText() + ". *** OK! ***");
-                    System.out.println("<---------------------------------------->");
-                }else {
-                    System.out.println((i + 1) + "." + card3.get(j).getText() + ". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
-                    System.out.println("<---------------------------------------->");
-                }
-            }
+        WebElement Dcard_3=GWD.getDriver().findElement(By.xpath("//*[contains(text(),'UCard Gift ')]"));
+        if (Dcard_3.getText().equalsIgnoreCase("UCard Gift")){
+            System.out.println("3."+Dcard_3.getText()+". *** OK! ***");
+            System.out.println("<---------------------------------------->");
+        }else System.out.println("3."+Dcard_3.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
+
+        WebElement Dcard_4=GWD.getDriver().findElement(By.xpath("//*[contains(text(),'Digital card ')]"));
+        if (Dcard_4.getText().equalsIgnoreCase("Digital card")){
+            System.out.println("4."+Dcard_4.getText()+". *** OK! ***");
+            System.out.println("<---------------------------------------->");
+        }else System.out.println("4."+Dcard_4.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
 
 
 
-        }
+
+
+
+
+
+
+
+//        List<WebElement> card3 =GWD.getDriver().findElements(By.xpath("//*[@class='commoncards__name']"));
+//       String[] listCard3={"Albalı Debet","Albalı ","UCard Gift","Digital card "};
+//        for (int i = 0; i < card3.size() ; i++) {
+//
+//            System.out.println("xxxx="+card3.get(i).getText().equalsIgnoreCase(listCard3[i]));
+//        }
+
+
     }
 }

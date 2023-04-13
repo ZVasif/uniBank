@@ -38,6 +38,8 @@ public class DialogContent extends Parent {
 
 
     //************************** _02_ Kartlar **************************//
+//    @FindBy(xpath = "//*[contains(text(),'Albalı Debet')]")
+//            private WebElement Dcard_1;
 
 
 
@@ -77,7 +79,7 @@ public class DialogContent extends Parent {
     public void findAndContainsText (String strElement,String text){
         switch (strElement){
             case "tele":myElement=tele;break;
-            //case "pageCards":myElement=pageCards;break;
+            //case "Dcard_1":myElement=Dcard_1;break;
 
 
         }
