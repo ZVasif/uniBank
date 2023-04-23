@@ -91,8 +91,8 @@ public class _02_Kartlar {
             System.out.println("<---------------------------------------->");
         }else System.out.println("1."+Dcard_1.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
 
-        WebElement Dcard_2=GWD.getDriver().findElement(By.xpath("//*[contains(text(),'Albalı  ')]"));
-        if (Dcard_2.getText().equalsIgnoreCase("Albalı  ")){
+        WebElement Dcard_2=GWD.getDriver().findElement(By.xpath("(//*[contains(text(),'Albalı')])[2]"));
+        if (Dcard_2.getText().equalsIgnoreCase("Albalı")){
             System.out.println("2."+Dcard_2.getText()+". *** OK! ***");
             System.out.println("<---------------------------------------->");
         }else System.out.println("2."+Dcard_2.getText()+". *SOS* Yeni və ya dəyişiklik edilmiş kart *SOS*");
