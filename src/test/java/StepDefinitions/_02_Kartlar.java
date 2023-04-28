@@ -128,3 +128,4 @@ public class _02_Kartlar {
 
     }
 }
+////*[contains(@class,'fotorama__nav__frame')]   5li noqte
