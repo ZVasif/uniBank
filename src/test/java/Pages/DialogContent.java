@@ -48,6 +48,9 @@ public class DialogContent extends Parent {
             private WebElement muddetli;
     @FindBy(xpath = "//h1[text()='Müddətli']")
             private WebElement sMessage;
+    @FindBy(css = "[type=\"number\"]")
+            private WebElement mebleg;
+
 
 
 
@@ -58,6 +61,7 @@ public class DialogContent extends Parent {
        switch (strElement){
            case "email":myElement=email;break;
            case "password":myElement=password;break;
+           case "mebleg":myElement=mebleg;break;
 
        }
 

@@ -9,11 +9,9 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 
 public class _02_Kartlar {
-    DialogContent dc = new DialogContent();
 
     @And("Check how many cards are in kartlar section")
     public void checkHowManyCardsAreInKartlarSection() {
-        DialogContent dc=new DialogContent();
 
         System.out.println("**************** Kartlar ****************");
 
